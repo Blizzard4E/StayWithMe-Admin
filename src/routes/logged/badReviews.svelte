@@ -39,7 +39,7 @@
 
     async function banHotel(hotel_id) {
         checkToken();
-        fetch("http://localhost:3000/admins/banHotel", {
+        fetch("https://stay-withme-api.cyclic.app/admins/banHotel", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -61,7 +61,7 @@
 
     async function getRatings() {
         checkToken();
-        fetch("http://localhost:3000/admins/ratings", {
+        fetch("https://stay-withme-api.cyclic.app/admins/ratings", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

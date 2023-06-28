@@ -26,7 +26,7 @@
 
     function createAdmin() {
         checkToken();
-        fetch("http://localhost:3000/admins/signUp", {
+        fetch("https://stay-withme-api.cyclic.app/admins/signUp", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -30,7 +30,7 @@
 
     async function getAdmins() {
         checkToken();
-        fetch("http://localhost:3000/admins/all", {
+        fetch("https://stay-withme-api.cyclic.app/admins/all", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -39,7 +39,7 @@
 
     async function banUser(user_id, report_id) {
         checkToken();
-        fetch("http://localhost:3000/admins/banUser", {
+        fetch("https://stay-withme-api.cyclic.app/admins/banUser", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -62,7 +62,7 @@
 
     async function getReports() {
         checkToken();
-        fetch("http://localhost:3000/admins/reports", {
+        fetch("https://stay-withme-api.cyclic.app/admins/reports", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

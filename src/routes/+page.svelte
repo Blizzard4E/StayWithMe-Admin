@@ -8,7 +8,7 @@
     let failed = false;
 
     async function login() {
-        fetch("http://localhost:3000/admins/login", {
+        fetch("https://stay-withme-api.cyclic.app/admins/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

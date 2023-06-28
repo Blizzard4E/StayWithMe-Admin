@@ -28,7 +28,7 @@
 
     async function unBanUser(hotel_id) {
         checkToken();
-        fetch("http://localhost:3000/admins/unBanHotel", {
+        fetch("https://stay-withme-api.cyclic.app/admins/unBanHotel", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -50,7 +50,7 @@
 
     async function getBannedHotels() {
         checkToken();
-        fetch("http://localhost:3000/admins/bannedHotels", {
+        fetch("https://stay-withme-api.cyclic.app/admins/bannedHotels", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
