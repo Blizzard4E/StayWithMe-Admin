@@ -133,7 +133,11 @@
                 <img src={selectedHotel.images[3]} alt="" />
             </div>
 
-            <button on:click={() => banHotel(selectedHotel.id)}>unban</button>
+            <div class="btn-wrap">
+                <button on:click={() => banHotel(selectedHotel.id)}
+                    >unban</button
+                >
+            </div>
         </div>
     {/if}
 </div>
@@ -290,18 +294,18 @@
                     object-fit: cover;
                 }
             }
-
+        }
+        .btn-wrap {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: end;
             button {
                 color: white;
                 font-size: 1rem;
-                float: right;
                 border-radius: 10%;
-                height: 1.8rem;
-                width: 2.5rem;
                 padding: 0 0.5rem;
-                background-color: rgb(204, 48, 48);
+                background-color: rgb(48, 134, 204);
                 cursor: pointer;
-                margin: 0.8rem 0;
             }
         }
     }

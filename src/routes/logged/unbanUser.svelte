@@ -28,7 +28,7 @@
 
     async function unBanUser(user_id) {
         checkToken();
-        fetch("http://localhost:3000/admins/unBanUser", {
+        fetch("https://stay-withme-api.cyclic.app/admins/unBanUser", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -50,7 +50,7 @@
 
     async function getBannedUsers() {
         checkToken();
-        fetch("http://localhost:3000/admins/bannedUsers", {
+        fetch("https://stay-withme-api.cyclic.app/admins/bannedUsers", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -87,7 +87,7 @@
 </script>
 
 <div class="reports">
-    <h1>Users - {filteredReports.length}</h1>
+    <h1>Reports - {filteredReports.length}</h1>
     <ul>
         {#each filteredReports as report}
             <li on:click={() => selectUser(report)}>
