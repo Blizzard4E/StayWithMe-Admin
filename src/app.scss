@@ -1,0 +1,15 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+*{
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    box-sizing: content-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    color: white
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
