@@ -92,7 +92,7 @@
             }}
         >
             <div class="tab">
-                <img src="/favicon.png" alt="" />
+                <img src="/report.png" alt="" />
                 <h3>{webpages[0].name}</h3>
             </div>
         </button>
@@ -106,7 +106,7 @@
             }}
         >
             <div class="tab">
-                <img src="/favicon.png" alt="" />
+                <img src="/thumb-down.png" alt="" />
                 <h3>{webpages[1].name}</h3>
             </div>
         </button>
@@ -120,7 +120,7 @@
             }}
         >
             <div class="tab">
-                <img src="/favicon.png" alt="" />
+                <img src="/open-padlock.png" alt="" />
                 <h3>{webpages[2].name}</h3>
             </div>
         </button>
@@ -134,7 +134,7 @@
             }}
         >
             <div class="tab">
-                <img src="/favicon.png" alt="" />
+                <img src="/open-padlock.png" alt="" />
                 <h3>{webpages[3].name}</h3>
             </div>
         </button>
@@ -149,7 +149,7 @@
                     }}
                 >
                     <div class="tab">
-                        <img src="/favicon.png" alt="" />
+                        <img src="/setting.png" alt="" />
                         <h3>{webpages[4].name}</h3>
                     </div>
                 </button>
@@ -198,7 +198,8 @@
         align-items: center;
 
         button {
-            padding: 0.5rem;
+            padding: 0.25rem;
+            font-size: 0.7rem;
             background-color: rgb(204, 48, 48);
         }
     }
@@ -312,9 +313,9 @@
 
         .profile {
             background-color: $logged_acc;
-            display: flex;
-            justify-content: space-between;
-            padding: 0rem 1rem;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            padding: 0rem 0.5rem;
             height: 100%;
 
             img {
@@ -338,7 +339,6 @@
                     margin: auto 0;
                     font-weight: normal;
                     font-size: 0.9rem;
-                    word-break: break-all;
                     color: $txt_nav;
                 }
             }
