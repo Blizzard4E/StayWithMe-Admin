@@ -73,74 +73,77 @@
     });
 </script>
 
-<div class="reports">
-    <h1>Banned Hotels - {bannedHotels.length}</h1>
-    <ul>
-        {#each bannedHotels as ban}
-            <li on:click={() => selectHotel(ban)}>
-                <div class="profile">
-                    <img src={ban.images[4]} alt="" />
-                    <div class="info">
-                        <h1>{ban.name}</h1>
-                        <h2>{ban.description}</h2>
+<main>
+    <div class="reports">
+        <h1>Banned Hotels - {bannedHotels.length}</h1>
+        <ul>
+            {#each bannedHotels as ban}
+                <li on:click={() => selectHotel(ban)}>
+                    <div class="profile">
+                        <img src={ban.images[4]} alt="" />
+                        <div class="info">
+                            <h1>{ban.name}</h1>
+                            <h2>{ban.description}</h2>
+                        </div>
                     </div>
+                    <div>
+                        <button on:click={() => unBanUser(ban.id)}>Unban</button>
+                    </div>
+                </li>
+            {/each}
+        </ul>
+    </div>
+    
+    <div class="details">
+        {#if selectedHotel}
+            <h1>Details</h1>
+            <div class="info">
+                <img class="hotel-pic" src={selectedHotel.images[4]} alt="" />
+                <h1>{selectedHotel.name}</h1>
+                <h3>{selectedHotel.email}</h3>
+    
+                <h2>Description</h2>
+                <h3>{selectedHotel.description}</h3>
+    
+                <div class="location">
+                    <h2>Country:</h2>
+                    <h3>{selectedHotel.country}</h3>
                 </div>
-                <div>
-                    <button on:click={() => unBanUser(ban.id)}>Unban</button>
+                <div class="googleMaps">
+                    <h2>Google Map:</h2>
+                    <h3>{selectedHotel.googleMap}</h3>
                 </div>
-            </li>
-        {/each}
-    </ul>
-</div>
-
-<div class="details">
-    {#if selectedHotel}
-        <h1>Details</h1>
-        <div class="info">
-            <img class="hotel-pic" src={selectedHotel.images[4]} alt="" />
-            <h1>{selectedHotel.name}</h1>
-            <h3>{selectedHotel.email}</h3>
-
-            <h2>Description</h2>
-            <h3>{selectedHotel.description}</h3>
-
-            <div class="location">
-                <h2>Country:</h2>
-                <h3>{selectedHotel.country}</h3>
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <iframe
+                    src={"https://maps.google.com/maps?&q=" +
+                        encodeURIComponent(selectedHotel.googleMap) +
+                        "&output=embed"}
+                    width="100%"
+                    height="200"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                />
+    
+                <h2>Images</h2>
+                <div class="images">
+                    <img src={selectedHotel.images[0]} alt="" />
+                    <img src={selectedHotel.images[1]} alt="" />
+                    <img src={selectedHotel.images[2]} alt="" />
+                    <img src={selectedHotel.images[3]} alt="" />
+                </div>
+    
+                <div class="btn-wrap">
+                    <button on:click={() => banHotel(selectedHotel.id)}
+                        >unban</button
+                    >
+                </div>
             </div>
-            <div class="googleMaps">
-                <h2>Google Map:</h2>
-                <h3>{selectedHotel.googleMap}</h3>
-            </div>
-            <!-- svelte-ignore a11y-missing-attribute -->
-            <iframe
-                src={"https://maps.google.com/maps?&q=" +
-                    encodeURIComponent(selectedHotel.googleMap) +
-                    "&output=embed"}
-                width="100%"
-                height="200"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-            />
+        {/if}
+    </div>
+</main>
 
-            <h2>Images</h2>
-            <div class="images">
-                <img src={selectedHotel.images[0]} alt="" />
-                <img src={selectedHotel.images[1]} alt="" />
-                <img src={selectedHotel.images[2]} alt="" />
-                <img src={selectedHotel.images[3]} alt="" />
-            </div>
-
-            <div class="btn-wrap">
-                <button on:click={() => banHotel(selectedHotel.id)}
-                    >unban</button
-                >
-            </div>
-        </div>
-    {/if}
-</div>
 
 <style lang="scss">
     .reports {

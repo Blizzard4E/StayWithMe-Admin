@@ -73,42 +73,44 @@
     });
 </script>
 
-<div class="reports">
-    <h1>Banned Users - {bannedUsers.length}</h1>
-    <ul>
-        {#each bannedUsers as ban}
-            <li on:click={() => selectUser(ban)}>
-                <div class="profile">
-                    <img src={ban.profile_pic} alt="" />
-                    <div class="info">
-                        <h1>{ban.username}</h1>
-                        <h2>{ban.bio}</h2>
+<main>
+    <div class="reports">
+        <h1>Banned Users - {bannedUsers.length}</h1>
+        <ul>
+            {#each bannedUsers as ban}
+                <li on:click={() => selectUser(ban)}>
+                    <div class="profile">
+                        <img src={ban.profile_pic} alt="" />
+                        <div class="info">
+                            <h1>{ban.username}</h1>
+                            <h2>{ban.bio}</h2>
+                        </div>
                     </div>
-                </div>
+                    <div>
+                        <button on:click={() => unBanUser(ban.id)}>Unban</button>
+                    </div>
+                </li>
+            {/each}
+        </ul>
+    </div>
+    
+    <div class="details">
+        {#if selectedUser}
+            <h1>Details</h1>
+            <div class="info">
+                <img src={selectedUser.profile_pic} alt="" />
+                <h1>{selectedUser.username}</h1>
+                <h3>{selectedUser.email}</h3>
+                <p>{selectedUser.bio}</p>
                 <div>
-                    <button on:click={() => unBanUser(ban.id)}>Unban</button>
+                    <button on:click={() => unBanUser(selectedUser.id)}
+                        >Unban</button
+                    >
                 </div>
-            </li>
-        {/each}
-    </ul>
-</div>
-
-<div class="details">
-    {#if selectedUser}
-        <h1>Details</h1>
-        <div class="info">
-            <img src={selectedUser.profile_pic} alt="" />
-            <h1>{selectedUser.username}</h1>
-            <h3>{selectedUser.email}</h3>
-            <p>{selectedUser.bio}</p>
-            <div>
-                <button on:click={() => unBanUser(selectedUser.id)}
-                    >Unban</button
-                >
             </div>
-        </div>
-    {/if}
-</div>
+        {/if}
+    </div>
+</main>
 
 <style lang="scss">
     .reports {

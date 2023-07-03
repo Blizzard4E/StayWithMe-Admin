@@ -11,5 +11,12 @@
     font-family: 'Poppins', sans-serif;
     color: white
 }
+main {
+    padding-top: 0.5%;
+    background-color: $bg_light;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    overflow: hidden;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');

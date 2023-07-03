@@ -50,28 +50,35 @@
     }
 </script>
 
-<div class="center">
-    <div class="container">
-        <div class="headings">
-            <h1>Create Admin</h1>
+<main>
+    <div class="center">
+        <div class="container">
+            <div class="headings">
+                <h1>Create Admin</h1>
+            </div>
+            <div class="inputs">
+                <h3>Username</h3>
+                <input type="text" bind:value={username} />
+            </div>
+            <div class="inputs">
+                <h3>EMAIL</h3>
+                <input type="text" bind:value={email} />
+            </div>
+            <div class="inputs">
+                <h3>PASSWORD</h3>
+                <input type="text" bind:value={password} />
+            </div>
+            <button class="login" on:click={createAdmin}>Create Admin</button>
         </div>
-        <div class="inputs">
-            <h3>Username</h3>
-            <input type="text" bind:value={username} />
-        </div>
-        <div class="inputs">
-            <h3>EMAIL</h3>
-            <input type="text" bind:value={email} />
-        </div>
-        <div class="inputs">
-            <h3>PASSWORD</h3>
-            <input type="text" bind:value={password} />
-        </div>
-        <button class="login" on:click={createAdmin}>Create Admin</button>
     </div>
-</div>
+</main>
+
 
 <style lang="scss">
+    main{
+        grid-template-columns: none;
+    }
+    
     .center {
         height: 100vh;
         display: grid;

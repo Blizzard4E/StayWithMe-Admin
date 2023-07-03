@@ -86,42 +86,44 @@
     });
 </script>
 
-<div class="reports">
-    <h1>Reports - {filteredReports.length}</h1>
-    <ul>
-        {#each filteredReports as report}
-            <li on:click={() => selectUser(report)}>
-                <div class="profile">
-                    <img src="/favicon.png" alt="" />
-                    <div class="info">
-                        <h1>{report.user_id.username}</h1>
-                        <h2>{report.review_id.feedback}</h2>
+<main>
+    <div class="reports">
+        <h1>Reports - {filteredReports.length}</h1>
+        <ul>
+            {#each filteredReports as report}
+                <li on:click={() => selectUser(report)}>
+                    <div class="profile">
+                        <img src="/favicon.png" alt="" />
+                        <div class="info">
+                            <h1>{report.user_id.username}</h1>
+                            <h2>{report.review_id.feedback}</h2>
+                        </div>
                     </div>
-                </div>
-                <button on:click={() => banUser(report.user_id.id, report.id)}
+                    <button on:click={() => banUser(report.user_id.id, report.id)}
+                        >Ban</button
+                    >
+                </li>
+            {/each}
+        </ul>
+    </div>
+    
+    <div class="details">
+        {#if selectedUser}
+            <h1>Details</h1>
+            <div class="info">
+                <img src={selectedUser.profile_pic} alt="" />
+                <h1>{selectedUser.username}</h1>
+                <h3>{selectedUser.email}</h3>
+                <p>{selectedUser.bio}</p>
+                <button
+                    on:click={() =>
+                        banUser(selectedUser.id, selectedUser.report_id)}
                     >Ban</button
                 >
-            </li>
-        {/each}
-    </ul>
-</div>
-
-<div class="details">
-    {#if selectedUser}
-        <h1>Details</h1>
-        <div class="info">
-            <img src={selectedUser.profile_pic} alt="" />
-            <h1>{selectedUser.username}</h1>
-            <h3>{selectedUser.email}</h3>
-            <p>{selectedUser.bio}</p>
-            <button
-                on:click={() =>
-                    banUser(selectedUser.id, selectedUser.report_id)}
-                >Ban</button
-            >
-        </div>
-    {/if}
-</div>
+            </div>
+        {/if}
+    </div>
+</main>
 
 <style lang="scss">
     .reports {

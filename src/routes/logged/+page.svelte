@@ -188,9 +188,7 @@
     </div>
 </nav>
 
-<main>
-    <svelte:component this={selectedPage.component} />
-</main>
+<svelte:component this={selectedPage.component} />
 
 <style lang="scss">
     .logout {
@@ -345,11 +343,4 @@
         }
     }
 
-    main {
-        padding-top: 0.5%;
-        background-color: $bg_light;
-        display: grid;
-        grid-template-columns: 70% 30%;
-        overflow: hidden;
-    }
 </style>

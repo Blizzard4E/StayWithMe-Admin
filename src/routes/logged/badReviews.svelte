@@ -85,32 +85,35 @@
     });
 </script>
 
-<div class="reviews">
-    <h1>Reviews - {filteredRatings.length}</h1>
-    <ul>
-        {#each filteredRatings as rating}
-            <li on:click={() => selectHotel(rating.hotel_id)}>
-                <div class="profile">
-                    <img src={rating.hotel_id.images[4]} alt="" />
-                    <div class="info">
-                        <h1>{rating.hotel_id.name}</h1>
-                        <div class="stars">
-                            {#each Array(rating.ratings) as _, i}
-                                <div class="star">
-                                    <img src="star.png" alt="" />
-                                </div>
-                            {/each}
+<main>
+    <div class="reviews">
+        <h1>Reviews - {filteredRatings.length}</h1>
+        <ul>
+            {#each filteredRatings as rating}
+                <li on:click={() => selectHotel(rating.hotel_id)}>
+                    <div class="profile">
+                        <img src={rating.hotel_id.images[4]} alt="" />
+                        <div class="info">
+                            <h1>{rating.hotel_id.name}</h1>
+                            <div class="stars">
+                                {#each Array(rating.ratings) as _, i}
+                                    <div class="star">
+                                        <img src="star.png" alt="" />
+                                    </div>
+                                {/each}
+                            </div>
+                            <h2>{rating.feedback}</h2>
                         </div>
-                        <h2>{rating.feedback}</h2>
                     </div>
-                </div>
-                <button on:click={() => banHotel(rating.hotel_id.id)}
-                    >Ban</button
-                >
-            </li>
-        {/each}
-    </ul>
-</div>
+                    <button on:click={() => banHotel(rating.hotel_id.id)}
+                        >Ban</button
+                    >
+                </li>
+            {/each}
+        </ul>
+    </div>
+</main>
+
 
 <div class="details">
     <h1>Details</h1>
