@@ -162,6 +162,25 @@
 <style lang="scss">
     .reviews {
         overflow: auto;
+        /* width */
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #646464;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #161616;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: rgb(46, 46, 46);
+        }
         h1 {
             color: grey;
             font-weight: normal;

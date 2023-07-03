@@ -54,7 +54,7 @@
         </div>
         <div class="inputs">
             <h3>PASSWORD</h3>
-            <input type="text" bind:value={password} />
+            <input type="password" bind:value={password} />
         </div>
         {#if failed}
             <p>Wrong Credentials</p>
