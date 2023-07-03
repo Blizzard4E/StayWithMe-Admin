@@ -72,9 +72,6 @@
 </div>
 
 <style lang="scss">
-    main{
-        grid-template-columns: none;
-    }
     .center {
         height: 100vh;
         display: grid;
