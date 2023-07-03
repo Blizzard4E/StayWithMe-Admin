@@ -112,7 +112,7 @@
             {/each}
         </ul>
     </div>
-</main>
+
 
 
 <div class="details">
@@ -159,6 +159,7 @@
         </div>
     {/if}
 </div>
+</main>
 
 <style lang="scss">
     .reviews {
