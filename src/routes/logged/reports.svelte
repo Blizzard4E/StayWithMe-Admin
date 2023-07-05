@@ -93,20 +93,21 @@
             {#each filteredReports as report}
                 <li on:click={() => selectUser(report)}>
                     <div class="profile">
-                        <img src="/favicon.png" alt="" />
+                        <img src={report.user_id.profile_pic} alt="" />
                         <div class="info">
                             <h1>{report.user_id.username}</h1>
                             <h2>{report.review_id.feedback}</h2>
                         </div>
                     </div>
-                    <button on:click={() => banUser(report.user_id.id, report.id)}
+                    <button
+                        on:click={() => banUser(report.user_id.id, report.id)}
                         >Ban</button
                     >
                 </li>
             {/each}
         </ul>
     </div>
-    
+
     <div class="details">
         {#if selectedUser}
             <h1>Details</h1>
@@ -170,6 +171,7 @@
                     img {
                         margin: auto 1rem;
                         height: 3rem;
+                        border-radius: 50%;
                     }
 
                     .info {
