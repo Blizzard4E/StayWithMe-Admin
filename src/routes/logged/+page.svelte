@@ -8,6 +8,7 @@
     import CreateAdmin from "./createAdmin.svelte";
     import { admin } from "../../stores";
     import { onMount } from "svelte";
+    import HotelList from "./hotelList.svelte";
 
     function checkToken() {
         if (localStorage.getItem("access_token")) {
@@ -62,6 +63,7 @@
         { name: "Low Ratings", component: badReviews },
         { name: "Unban Users", component: unbanUser },
         { name: "Unban Hotels", component: unbanHotel },
+        { name: "Hotel List", component: HotelList },
         { name: "Create Admin", component: CreateAdmin },
     ];
 
@@ -138,19 +140,34 @@
                 <h3>{webpages[3].name}</h3>
             </div>
         </button>
+
+        <button
+            class="tablink {currentPage === 4 ? 'active' : ''}"
+            title={webpages[4].name}
+            on:click={() => {
+                tab(webpages[4]);
+                currentPage = 4;
+            }}
+        >
+            <div class="tab">
+                <img src="/setting.png" alt="" />
+                <h3>{webpages[4].name}</h3>
+            </div>
+        </button>
+
         {#if adminData}
             {#if adminData.role == 1}
                 <button
-                    class="tablink {currentPage === 4 ? 'active' : ''}"
-                    title={webpages[4].name}
+                    class="tablink {currentPage === 5 ? 'active' : ''}"
+                    title={webpages[5].name}
                     on:click={() => {
-                        tab(webpages[4]);
-                        currentPage = 4;
+                        tab(webpages[5]);
+                        currentPage = 5;
                     }}
                 >
                     <div class="tab">
                         <img src="/setting.png" alt="" />
-                        <h3>{webpages[4].name}</h3>
+                        <h3>{webpages[5].name}</h3>
                     </div>
                 </button>
             {/if}
@@ -342,5 +359,4 @@
             }
         }
     }
-
 </style>
