@@ -55,13 +55,18 @@
     <div class="reports">
         <h1>Hotels - {hotelList.length}</h1>
         <ul>
-            {#each hotelList as ban}
-                <li on:click={() => selectHotel(ban)}>
+            {#each hotelList as hotel}
+                <li on:click={() => selectHotel(hotel)}>
                     <div class="profile">
-                        <img src={ban.images[4]} alt="" />
+                        <img src={hotel.images[4]} alt="" />
                         <div class="info">
-                            <h1>{ban.name}</h1>
-                            <h2>{ban.description}</h2>
+                            <h1>{hotel.name}</h1>
+                            {#if hotel.banned}
+                                <h3 class="banned">Banned</h3>
+                            {:else}
+                                <h3>Active</h3>
+                            {/if}
+                            <h2>{hotel.description}</h2>
                         </div>
                     </div>
                 </li>
@@ -178,6 +183,16 @@
                             font-weight: normal;
                             font-size: 1rem;
                             word-break: break-all;
+                        }
+                        h3 {
+                            background: rgb(71, 179, 71);
+                            width: max-content;
+                            padding: 0.15rem 0.25rem;
+                            font-size: 0.9rem;
+                            font-weight: normal;
+                        }
+                        h3.banned {
+                            background-color: rgb(204, 48, 48);
                         }
                     }
                 }
